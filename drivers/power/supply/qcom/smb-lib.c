@@ -4879,7 +4879,7 @@ static bool op_get_fast_low_temp_full(struct smb_charger *chg)
 {
 	if (fast_charger && fast_charger->get_fast_low_temp_full)
 		return fast_charger->get_fast_low_temp_full();
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -4887,7 +4887,7 @@ static bool get_fastchg_firmware_updated_status(struct smb_charger *chg)
 {
 	if (fast_charger && fast_charger->get_fastchg_firmware_already_updated)
 		return fast_charger->get_fastchg_firmware_already_updated();
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -4895,7 +4895,7 @@ static bool get_prop_fast_switch_to_normal(struct smb_charger *chg)
 {
 	if (fast_charger && fast_charger->fast_switch_to_normal)
 		return fast_charger->fast_switch_to_normal();
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -5135,7 +5135,7 @@ bool get_prop_fast_chg_started(struct smb_charger *chg)
 	return true;
 	if (fast_charger && fast_charger->fast_chg_started)
 		return fast_charger->fast_chg_started();
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -5146,7 +5146,7 @@ int get_prop_fast_adapter_update(struct smb_charger *chg)
 	if (fast_charger && fast_charger->get_adapter_update)
 		update_status = fast_charger->get_adapter_update();
 	else {
-		pr_err("no fast_charger register found\n");
+		//pr_err("no fast_charger register found\n");
 		update_status = ADAPTER_FW_UPDATE_NONE;
 	}
 	return update_status;
@@ -5156,7 +5156,7 @@ static bool set_prop_fast_switch_to_normal_false(struct smb_charger *chg)
 {
 	if (fast_charger && fast_charger->set_switch_to_noraml_false)
 		return fast_charger->set_switch_to_noraml_false();
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -5164,7 +5164,7 @@ bool op_get_fastchg_ing(struct smb_charger *chg)
 {
 	if (fast_charger && fast_charger->get_fast_chg_ing)
 		return fast_charger->get_fast_chg_ing();
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -5172,7 +5172,7 @@ bool op_set_fast_chg_allow(struct smb_charger *chg, bool enable)
 {
 	if (fast_charger && fast_charger->set_fast_chg_allow)
 		return fast_charger->set_fast_chg_allow(enable);
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -5180,7 +5180,7 @@ static bool op_get_fast_chg_allow(struct smb_charger *chg)
 {
 	if (fast_charger && fast_charger->get_fast_chg_allow)
 		return fast_charger->get_fast_chg_allow();
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -5189,7 +5189,7 @@ static bool op_is_usb_switch_on(struct smb_charger *chg)
 	if (fast_charger && fast_charger->is_usb_switch_on)
 		return fast_charger->is_usb_switch_on();
 
-	pr_err("no fast_charger register found\n");
+	//pr_err("no fast_charger register found\n");
 	return false;
 }
 
@@ -5234,7 +5234,7 @@ static void set_usb_switch(struct smb_charger *chg, bool enable)
 	int retrger_time;
 
 	if (!fast_charger) {
-		pr_err("no fast_charger register found\n");
+		//pr_err("no fast_charger register found\n");
 		// Enable otg feature when not connected to dash charger
 		op_set_prop_otg_switch(chg, &otg_on);
 		return;
