@@ -1089,6 +1089,9 @@ static int dash_parse_dt(struct fastchg_device_info *di)
 		return -EINVAL;
 	}
 
+	// XXX disable this thing
+	return -EINVAL;
+
 	di->usb_sw_1_gpio = of_get_named_gpio_flags(dev_node,
 			"microchip,usb-sw-1-gpio", 0, &flags);
 	di->usb_sw_2_gpio = of_get_named_gpio_flags(dev_node,
