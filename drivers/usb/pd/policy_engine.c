@@ -2289,7 +2289,11 @@ static void usbpd_sm(struct work_struct *w)
 		if (IS_CTRL(rx_msg, MSG_PS_RDY))
 			usbpd_set_state(pd, PE_SNK_STARTUP);
 		else
-			usbpd_set_state(pd, PE_ERROR_RECOVERY);
+			// XXX fails on backbone one
+			usbpd_err(&pd->dev, "No MSG_PS_RDY received\n");
+			usbpd_err(&pd->dev, "backbone one hack: continuing anyway\n");
+			usbpd_set_state(pd, PE_SNK_STARTUP);
+			//usbpd_set_state(pd, PE_ERROR_RECOVERY);
 		break;
 
 	case PE_PRS_SNK_SRC_SEND_SWAP:
