@@ -15,4 +15,5 @@ podman run \
 	-v ./:/workdir \
 	-w /workdir/dumpling_kernel_build \
 	--entrypoint /bin/bash \
-	"$IMAGE_NAME"
+	"$IMAGE_NAME" \
+	build.sh

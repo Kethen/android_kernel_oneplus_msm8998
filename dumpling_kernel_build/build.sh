@@ -24,7 +24,7 @@ KBUILD_PATH="$PWD/kbuild"
 KERNEL_PATH="$KBUILD_PATH/arch/arm64/boot/Image.gz-dtb"
 
 clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 "$CLANG_PATH" master-kernel-build-2022
-clone https://github.com/LineageOS/android_system_tools_mkbootimg.git "$LOS_BOOTIMG_TOOLS_PATH" lineage-20.0
+clone https://github.com/LineageOS/android_system_tools_mkbootimg.git "$LOS_BOOTIMG_TOOLS_PATH" lineage-21.0
 clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 "$GCC_AARCH64_PATH" pie-gsi
 clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 "$GCC_ARM_PATH" pie-gsi
 
